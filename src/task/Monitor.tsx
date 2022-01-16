@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Monitor.css';
 import { Text, ITextProps } from '@fluentui/react/lib/Text';
-import { Dropdown, IDropdownOption } from '@fluentui/react/lib/Dropdown';
+import { Dropdown, IDropdownOption ,IDropdownStyles} from '@fluentui/react/lib/Dropdown';
 import { Toggle } from '@fluentui/react/lib/Toggle';
 import { FontIcon } from '@fluentui/react/lib/Icon';
 import { mergeStyles, mergeStyleSets } from '@fluentui/react/lib/Styling';
@@ -25,7 +25,7 @@ const classNames = mergeStyleSets({
 })
 
 const title = "Alarms Alerts & Events(AAE) Monitor"
-const dropdownStyles1 = { dropdown: { width: 300, float: 'right', fontWeight: 'bolder', fontSize: '20px' } };
+const dropdownStyles1 : Partial<IDropdownStyles> = { dropdown: { width: 300, float: 'right', fontWeight: 'bolder', fontSize: '20px' } };
 const dropdownStyles2 = { dropdown: { width: 300, fontWeight: 'bolder', fontSize: '20px' } };
 const controlStyles = {
     root: {
@@ -60,8 +60,8 @@ const columns: IColumn[] = [
   { key: 'column5', name: 'Train No.', fieldName: 'trainNo', minWidth: 50, maxWidth: 100, isResizable: true },
   { key: 'column6', name: 'Component', fieldName: 'component', minWidth: 100, maxWidth: 500, isResizable: true },
   { key: 'column7', name: 'System', fieldName: 'system', minWidth: 150, maxWidth: 1000, isResizable: true },
-  { key: 'column8', name: 'Failure', fieldName: 'failure', minWidth: 200, maxWidth: 1600, isResizable: true },
-  { key: 'column9', name: 'Date & Time', fieldName: 'dateTime', minWidth: 100, maxWidth: 300, isResizable: true },
+  { key: 'column8', name: 'Failure', fieldName: 'failure', minWidth: 200, maxWidth: 1500, isResizable: true },
+  { key: 'column9', name: 'Date & Time', fieldName: 'dateTime', minWidth: 110, maxWidth: 300, isResizable: true },
   { key: 'column10', name: 'Priority', fieldName: 'priority', minWidth: 100, maxWidth: 150, isResizable: true },
   { key: 'column11', name: 'Ticket', fieldName: 'ticket', minWidth: 100, maxWidth: 200, isResizable: true },
 ];
@@ -125,7 +125,7 @@ export const Monitor = () => {
                         <span>|</span>
                     </div>
                     <div className="ms-Grid-col ms-sm3 ms-md3 ms-lg1">
-                          <Toggle label="No Tickets" styles={controlStyles} />
+                          <Toggle label="No Tickets" inlineLabel styles={controlStyles} />
                     </div>
                     <div className="ms-Grid-col ms-sm2 ms-md2 ms-lg2">
                     <FontIcon aria-label="Train" iconName="TrainSolid" className={classNames.greenYellow} />
@@ -133,7 +133,7 @@ export const Monitor = () => {
                </div>
                 <div className="ms-Grid-row Nav-header">
                     <div className="ms-Grid-col ms-sm6 ms-md5 ms-lg4 pl-2">
-                    <Text className={classNames.textColor} style={{color:'blue'}} variant={'large' as ITextProps['variant']}>Active(30)</Text> &nbsp;&nbsp;
+                    <Text className={classNames.textColor} style={{color:'#0483d1'}} variant={'large' as ITextProps['variant']}>Active(30)</Text> &nbsp;&nbsp;
                     <Text className={classNames.textColor} variant={'large' as ITextProps['variant']}>Acknowledged(30)</Text> &nbsp;&nbsp;
                     <Text className={classNames.textColor} variant={'large' as ITextProps['variant']}>Unacknowledged(30)</Text> &nbsp;&nbsp;
                     <Text className={classNames.textColor} variant={'large' as ITextProps['variant']}>Isolated(30)</Text>
