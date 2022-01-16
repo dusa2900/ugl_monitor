@@ -1,0 +1,42 @@
+
+.Main-header {
+    max-width:100%;
+    max-height: 10vh;
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap:row wrap;
+    align-items: center;
+    position:relative;
+}
+
+
+.Label-header
+{
+    display: flex;
+    flex-wrap:row wrap;
+    background-color: #464646;
+    max-width:100%;
+    border-radius: 2%;
+    min-height: 8vh;
+    margin: 9px 0px;
+    padding-left: 22px;
+   align-items: center;
+   color:white;
+   
+    
+}
+/* .ms-FocusZone {
+    background-color: black;
+    color: white;
+} */
+.ms-FocusZone:nth-child(odd) .ms-DetailsRow {
+    background-color: #464646;
+    color: white;
+  }
+.ms-List-cell:nth-child(even) .ms-DetailsRow {
+    background-color: black;
+    color: white;
+}
+/* .ms-List-cell:nth-child(even) .ms-DetailsRow {
+    background: #EEE;
+  } */
